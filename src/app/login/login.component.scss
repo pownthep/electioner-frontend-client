@@ -14,11 +14,23 @@
         div{
             text-align: center;
             img{
-                height:200px;
+                height:180px;
                 margin:0;
                 padding:0;
-                padding-bottom: 35px;
+                padding-bottom: 50px;
+                animation: skew 3s infinite;
+                transform: skew(20deg);
+                animation-direction: alternate;
             }
+            @keyframes skew {
+                0% {
+                  transform: skewY(20deg);
+                }
+                100% {
+                  transform: skewY(-20deg);
+                }
+            }
+            
         }
         box-sizing: border-box;
         button{
