@@ -1,0 +1,50 @@
+#login-form-wrapper{
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height:100%;
+    #form-container{
+        padding:50px;
+        border-radius: 8px;
+    }
+
+    form{
+        div{
+            text-align: center;
+            img{
+                height:200px;
+                margin:0;
+                padding:0;
+                padding-bottom: 35px;
+            }
+        }
+        box-sizing: border-box;
+        button{
+            margin-top: 1.5rem;
+        }
+    }
+}
+
+.w4-h5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+    width: 400px;
+    height:500px;
+}
+
+.full-width-height{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.full-width{
+    width:100%;
+}

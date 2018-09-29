@@ -1,0 +1,55 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+}
+
+.hidden{
+  display: none;
+}
+
+#spacer{
+  flex: 1 1 auto;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: grey;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  padding: 15px;
+}
+
+a:after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  background-color: grey;
+  width: 0;
+  left: 50%;
+  bottom: 0;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+    transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+}
+
+a:hover {
+  color: #000000;
+}
+
+a:hover:after {
+  width: 100%;
+}
