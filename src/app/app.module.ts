@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { VoteComponent } from './vote/vote.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +23,13 @@ import { HttpClientModule } from '@angular/common/http';
     NavComponent,
     HomeComponent,
     LoginComponent,
+    VoteComponent,
   ],
   imports: [
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'login', component: LoginComponent },
+      { path: 'vote', component: VoteComponent },
     ]),
     BrowserModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),

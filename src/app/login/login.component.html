@@ -1,5 +1,5 @@
 <div id="login-form-wrapper">
-  <div id="form-container" [class.full-width-height]="(isHandset$ | async)!" class="w4-h5 mat-elevation-z6">
+  <div id="form-container" [class.full-width-height]="(isHandset$ | async)!" class="w4-h5">
     <form>
       <div>
         <img src="../assets/icons/logo.png" alt="">
@@ -11,7 +11,7 @@
         <input matInput placeholder="Password">
       </mat-form-field>
       <div>
-        <button mat-raised-button color="primary">Login</button>
+        <button mat-raised-button color="primary" routerLink="vote">Login</button>
       </div>
     </form>
   </div>
