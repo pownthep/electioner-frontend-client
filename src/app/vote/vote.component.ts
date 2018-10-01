@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-vote',
@@ -7,10 +8,14 @@ import * as $ from 'jquery';
   styleUrls: ['./vote.component.scss']
 })
 export class VoteComponent implements OnInit {
-
-  constructor() { }
+  public data: any;
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+
+    this.data = this.route;
+    console.log(this.data);
+
     var Flipper = (function() {
       var card = $('.card');
       var flipper = card.find('.card__flipper');

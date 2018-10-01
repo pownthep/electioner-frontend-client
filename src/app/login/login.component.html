@@ -1,17 +1,17 @@
 <div id="login-form-wrapper">
   <div id="form-container" [class.full-width-height]="(isHandset$ | async)!" class="w4-h5">
-    <form>
+    <form [formGroup]="login" #f="ngForm" (ngSubmit)="onSubmit(f)">
       <div>
-        <img src="../assets/icons/logo.png" alt="">
+        <img src="../assets/icons/logo4.svg" alt="">
       </div>
       <mat-form-field class="full-width">
-        <input matInput placeholder="Username">
+        <input matInput placeholder="Username" formControlName="username" required>
       </mat-form-field>
       <mat-form-field class="full-width">
-        <input matInput placeholder="Password">
+        <input type="password" matInput placeholder="Password" formControlName="password" required>
       </mat-form-field>
       <div>
-        <button mat-raised-button color="primary" routerLink="vote">Login</button>
+        <button mat-raised-button color="primary" type="submit">Login</button>
       </div>
     </form>
   </div>

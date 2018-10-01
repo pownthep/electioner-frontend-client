@@ -22,4 +22,4 @@ export class NavComponent {
     router.events.subscribe((_: NavigationEnd) => this.currentUrl = _.url);
   }
   
-  }
+}

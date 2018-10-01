@@ -16,6 +16,8 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { VoteComponent } from './vote/vote.component';
+import { ResultComponent } from './result/result.component';
+import { DataService } from './services/data.service';
 
 @NgModule({
   declarations: [
@@ -24,12 +26,18 @@ import { VoteComponent } from './vote/vote.component';
     HomeComponent,
     LoginComponent,
     VoteComponent,
+    ResultComponent,
   ],
   imports: [
     RouterModule.forRoot([
-      { path: '', component: HomeComponent },
-      { path: 'login', component: LoginComponent },
-      { path: 'vote', component: VoteComponent },
+      { path: '', component: HomeComponent, data: {depth: 1}},
+      { path: 'login', component: LoginComponent, data: {depth: 2}},
+      { path: 'vote', component: VoteComponent},
+      { path: 'result', component: ResultComponent, data: {depth: 2}},
+      {
+        path: '**',
+        component: LoginComponent
+      }
     ]),
     BrowserModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
@@ -48,7 +56,7 @@ import { VoteComponent } from './vote/vote.component';
     MatNativeDateModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
