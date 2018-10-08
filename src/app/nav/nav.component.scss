@@ -24,19 +24,20 @@
 a {
   display: inline-block;
   text-decoration: none;
-  color: rgb(255, 255, 255);
+  color: white;
   text-transform: uppercase;
   position: relative;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
   padding: 15px;
+  color: #163a5f;
 }
 
 a:after {
   content: "";
   position: absolute;
   height: 2px;
-  background-color: rgb(255, 255, 255);
+  background-color: #163a5f;
   width: 0;
   left: 50%;
   bottom: 0;
@@ -44,13 +45,16 @@ a:after {
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   -webkit-transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
-    transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+  transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
 }
 
 a:hover {
-  color: #f8f8f8;
+  color: #163a5f;
 }
 
 a:hover:after {
   width: 100%;
+}
+.mat-toolbar-single-row {
+  height: 70px;
 }

@@ -14,13 +14,13 @@
         div{
             text-align: center;
             img{
-                height:180px;
+                height:70px;
                 margin:0;
                 padding:0;
                 padding-bottom: 50px;
-                animation: skew 3s infinite;
+                /*animation: skew 3s infinite;
                 transform: skew(20deg);
-                animation-direction: alternate;
+                animation-direction: alternate;*/
             }
             @keyframes skew {
                 0% {
@@ -34,6 +34,12 @@
             }
             
         }
+        input{
+            color: teal;
+        }
+        .mat-form-field-infix {
+            color: #f44336;
+        }
         box-sizing: border-box;
         button{
             margin-top: 1.5rem;
@@ -45,9 +51,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    //background-color: grey;
-    width: 400px;
+    background-color: white;
+    width: 300px;
     height:500px;
+    background-image: url(https://ssl.gstatic.com/support/content/images/static/homepage_header_background.svg);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+    margin-top: 2rem;
 }
 
 .full-width-height{
@@ -57,8 +68,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: none;
 }
 
 .full-width{
     width:100%;
+}
+
+.mat-raised-button{
+    border-radius: 250px;
+    background-color: #21aba5;
+    color: azure;
 }

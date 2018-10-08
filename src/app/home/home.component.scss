@@ -1,0 +1,33 @@
+#home-wrapper{
+    #background{
+        background-color: #f8f0f0;
+        width: 100%;
+        height: 50%;
+        z-index: -1;
+        position: absolute;
+    }
+    #midground{
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 50% auto;
+        #left{
+            padding: 20%;    
+        }
+        #right{
+            #intro-text{
+                padding-top: 20rem; 
+            }
+            #Vote-now{
+                padding-top: 2rem;
+                .mat-stroked-button{
+                    border-radius: 20px;
+                }
+                .mat-stroked-button:hover{
+                    background-color: #1dcd9f;
+                    transition: 0.3s; 
+                    color: white;
+                }   
+            }
+        }
+    }
+}
