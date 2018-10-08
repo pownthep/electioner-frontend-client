@@ -2,9 +2,9 @@
   <div id="form-container" [class.full-width-height]="(isHandset$ | async)!" class="w4-h5">
     <form [formGroup]="login" #f="ngForm" (ngSubmit)="onSubmit(f)">
       <div>
-        <img src="../assets/icons/logo4.svg" alt="">
+        <img src="../assets/icons/logo.svg" alt="">
       </div>
-      <mat-form-field class="full-width">
+      <mat-form-field class="full-width" color="priamry">
         <input matInput placeholder="Username" formControlName="username" required>
       </mat-form-field>
       <mat-form-field class="full-width">

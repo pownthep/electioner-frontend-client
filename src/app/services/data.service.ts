@@ -14,4 +14,11 @@ export class DataService {
   login(user: User) {
     return this.http.post<User>(this.baseUrl+'/users/login', user); 
   }
+  vote(vote: any) {
+    return this.http.post(this.baseUrl+'/multichain/publish', vote);
+  }
+
+  getRep(area: string) {
+    return this.http.get(this.baseUrl+"/api/area/"+area);
+  }
 }

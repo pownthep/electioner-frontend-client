@@ -6,11 +6,14 @@
     width:100%;
     height:auto;
     #form-container{
+        //background-color: aliceblue;
+        //opacity: 0.5;
         padding:50px;
         border-radius: 8px;
     }
 
     form{
+        //background-color: aliceblue;
         div{
             text-align: center;
             img{
@@ -24,12 +27,14 @@
             }
             @keyframes skew {
                 0% {
-                  transform: skewY(10deg);
+                  //transform: skewY(10deg);
+                  transform: scale(0.8);
                   opacity: 1.0;
                 }
                 100% {
-                  transform: skewY(-10deg);
-                  opacity: 0.8;
+                  //transform: skewY(-10deg);
+                  transform: scale(1.0);
+                  //opacity: 0.8;
                 }
             }
             
@@ -45,7 +50,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    //background-color: grey;
     width: 400px;
     height:500px;
 }

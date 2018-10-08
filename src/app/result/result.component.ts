@@ -23,7 +23,7 @@ export class ResultComponent implements OnInit {
   }
 
   onClick(input:any) {
-    this.title = input.id;
+    this.title = input;
     console.log(this.title);
   }
 

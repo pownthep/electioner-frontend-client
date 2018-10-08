@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { VoteComponent } from './vote/vote.component';
 import { ResultComponent } from './result/result.component';
 import { DataService } from './services/data.service';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { DataService } from './services/data.service';
     HttpClientModule,
     MatNativeDateModule,
     ReactiveFormsModule,
+    MatCardModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
