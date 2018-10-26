@@ -6,6 +6,8 @@ import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
 import { DataService } from '../services/data.service';
 import { User } from '../models/User';
 import { Router } from '@angular/router';
+import { trigger, transition, group, query, style, animate } from '@angular/animations';
+
 
 @Component({
   selector: 'app-login',

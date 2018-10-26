@@ -1,17 +1,23 @@
 #result-wrapper {
-    display: block;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   }
   * {
       stroke-width: 1px;
       stroke: black;
+      fill: transparent;
   }
   #result-wrapper #map {
-    transform: scale(0.6);
+    //transform: scale(0.6);
     text-align: center;
+    //background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
   }
   #result-wrapper #map svg {
     float: left;
   }
+  /*
   #result-wrapper #map #TH-10
   {
     fill: #f28500;
@@ -407,7 +413,7 @@
   #result-wrapper #map #TH-80:hover, #result-wrapper #map #TH-81:hover, #result-wrapper #map #TH-82:hover, #result-wrapper #map #TH-83:hover, #result-wrapper #map #TH-84:hover, #result-wrapper #map #TH-85:hover, #result-wrapper #map #TH-86:hover, #result-wrapper #map #TH-90:hover, #result-wrapper #map #TH-91:hover, #result-wrapper #map #TH-92:hover, #result-wrapper #map #TH-93:hover, #result-wrapper #map #TH-94:hover, #result-wrapper #map #TH-95:hover, #result-wrapper #map #TH-96:hover, #result-wrapper #map #TH-LKSG:hover {
     transform: scale(1.01);
     fill: #e91e63;
-  }
+  }*/
   .c2 {
     grid-template-columns: 50% auto;
   }
@@ -423,4 +429,3 @@
   .svg-mobile {
     padding: 25px;
   }
-  

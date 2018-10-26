@@ -18,7 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { VoteComponent } from './vote/vote.component';
 import { ResultComponent } from './result/result.component';
 import { DataService } from './services/data.service';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -33,11 +33,11 @@ import {MatCardModule} from '@angular/material/card';
     RouterModule.forRoot([
       { path: '', component: HomeComponent, data: {depth: 1}},
       { path: 'login', component: LoginComponent, data: {depth: 2}},
-      { path: 'vote', component: VoteComponent},
+      { path: 'vote', component: VoteComponent, data: {depth: 3}},
       { path: 'result', component: ResultComponent, data: {depth: 2}},
       {
         path: '**',
-        component: LoginComponent
+        component: LoginComponent, data: {depth: 2}
       }
     ]),
     BrowserModule,

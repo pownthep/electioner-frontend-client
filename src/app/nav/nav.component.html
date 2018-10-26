@@ -11,12 +11,11 @@
     <mat-nav-list>
       <a mat-list-item routerLink="">Home</a>
       <a mat-list-item routerLink="">Candidate</a>
-      <a mat-list-item routerLink="login">LOGIN</a>
       <a mat-list-item routerLink="result">RESULT</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar [ngClass]="{widetoolbar: !(isHandset$ | async)!}">
+    <mat-toolbar class="mat-elevation-z0" *ngIf="router.url != '/vote'">
       <button
         type="button"
         aria-label="Toggle sidenav"
@@ -25,12 +24,13 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>ELECTIONER</span>
+      <span>
+        electioner
+      </span>
       <span id="spacer"></span>
       <div *ngIf="!(isHandset$ | async)">
         <a routerLink="">Home</a>
         <a >Candidate</a>
-        <a routerLink="login">LOGIN</a>
         <a routerLink="result">RESULT</a>
       </div>
     </mat-toolbar>

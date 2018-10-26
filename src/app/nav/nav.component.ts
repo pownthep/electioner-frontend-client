@@ -18,7 +18,7 @@ export class NavComponent {
       map(result => result.matches)
     );
     
-  constructor(private breakpointObserver: BreakpointObserver, private router: Router) {
+  constructor(private breakpointObserver: BreakpointObserver, public router: Router) {
     router.events.subscribe((_: NavigationEnd) => this.currentUrl = _.url);
   }
   

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Vote } from '../models/Vote';
 import { DataService } from '../services/data.service';
 import * as forge from 'node-forge';
@@ -53,7 +53,7 @@ export class VoteComponent implements OnInit {
   private publicKey = forge.pki.publicKeyFromPem(this.publicKeyPem);
   private privateKey = forge.pki.privateKeyFromPem(this.privateKeyPem);
 
-  constructor(private route: ActivatedRoute, private data: DataService) { }
+  constructor(private route: Router, private data: DataService) { }
 
   ngOnInit() {
 
@@ -68,11 +68,16 @@ export class VoteComponent implements OnInit {
   }
 
   onClick() {
+    var message = "test";
     var tmp = this.publicKey.encrypt("Hello")
-    console.log(tmp);
+    console.log('Message to be sent: ' + '"'+message+'"');
+    console.log('Encrypted message to be sent: ' + '"'+tmp+'"');
     var vote = new Vote("test", "test", tmp);
     this.data.vote(vote).subscribe(
-      data => console.log(data),
+      data => {
+        console.log('Transaction id: ' + data);
+        this.route.navigate(['']);
+      },
       err => console.log(err)
     )
   }

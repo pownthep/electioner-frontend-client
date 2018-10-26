@@ -7,7 +7,7 @@ import { User } from '../models/User';
   providedIn: 'root'
 })
 export class DataService {
-  private baseUrl = "https://localhost";
+  private baseUrl = "https://35.186.153.108";
 
   constructor(private http: HttpClient) { }
 

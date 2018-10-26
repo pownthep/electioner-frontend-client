@@ -1,19 +1,59 @@
 #home-wrapper{
+    @media screen and (max-width: 700px) {
+        height:100vh;
+    }
+    height:100vh;
     #background{
+        background-color: #f8f0f0;
         width: 100%;
-        height: 100vh;
+        height: 50%;
         z-index: -1;
         position: absolute;
+        @media screen and (max-width: 700px) {
+            height: 30%;
+        }
     }
-    #foreground{
-        z-index: 1;
+    #midground{
+        @media screen and (max-width: 700px) {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
         display: grid;
         grid-template-columns: 50% auto;
         #left{
-
+            padding: 20%;    
         }
         #right{
-
+            #intro-text{
+                @media screen and (max-width: 700px) {
+                    padding-top: 0rem;
+                    text-align: center; 
+                    h1{
+                        margin-top: 0;
+                    }
+                }
+                padding-top: 20rem; 
+            }
+            #semi-intro-text{
+                @media screen and (max-width: 700px) {
+                    text-align: center;
+                }
+            }
+            #Vote-now{
+                @media screen and (max-width: 700px) {
+                    text-align: center;
+                }
+                padding-top: 2rem;
+                .mat-stroked-button{
+                    border-radius: 20px;
+                }
+                .mat-stroked-button:hover{
+                    background-color: #1dcd9f;
+                    transition: 0.3s; 
+                    color: white;
+                }   
+            }
         }
+        z-index: 1;
     }
 }

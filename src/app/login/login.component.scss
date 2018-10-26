@@ -4,42 +4,35 @@
     justify-content: center;
     align-items: center;
     width:100%;
-    height:auto;
+    height:100%;
+    background-image: url(https://ssl.gstatic.com/support/content/images/static/homepage_header_background.svg);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 100%;
     #form-container{
-        //background-color: aliceblue;
-        //opacity: 0.5;
         padding:50px;
         border-radius: 8px;
     }
 
     form{
-        //background-color: aliceblue;
+        box-sizing: border-box;
         div{
             text-align: center;
             img{
-                height:180px;
+                height:100px;
+                width:280px;
                 margin:0;
-                padding:0;
-                padding-bottom: 50px;
-                animation: skew 3s infinite;
-                transform: skew(20deg);
-                animation-direction: alternate;
-            }
-            @keyframes skew {
-                0% {
-                  //transform: skewY(10deg);
-                  transform: scale(0.8);
-                  opacity: 1.0;
-                }
-                100% {
-                  //transform: skewY(-10deg);
-                  transform: scale(1.0);
-                  //opacity: 0.8;
-                }
+                padding-left:40px;
+                padding-bottom: 20px;
             }
             
         }
-        box-sizing: border-box;
+        input{
+            color: teal;
+        }
+        .mat-form-field-infix {
+            color: #f44336;
+        }
         button{
             margin-top: 1.5rem;
         }
@@ -50,19 +43,28 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 400px;
+    width: 300px;
     height:500px;
+    background: transparent;
+    //margin-top: 2rem;
 }
 
 .full-width-height{
     width: 100%;
     height: 100%;
-    background: transparent;
     display: flex;
     justify-content: center;
+    padding: 25px;
     align-items: center;
+    box-shadow: none;
 }
 
 .full-width{
     width:100%;
+}
+
+.mat-raised-button{
+    border-radius: 250px;
+    background-color: #21aba5;
+    color: azure;
 }
