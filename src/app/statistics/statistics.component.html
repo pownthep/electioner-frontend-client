@@ -1,0 +1,67 @@
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab label="Total score of candidate">
+    <ng-template matTabContent>
+      <div class="grid" *ngIf="candidateBallotCounts$">
+        <div>
+          <canvas baseChart
+                  [datasets]="barChartData1"
+                  [labels]="barChartLabels1"
+                  [options]="barChartOptions1"
+                  [legend]="barChartLegend"
+                  [chartType]="barChartType">
+          </canvas>
+        </div>
+        <div>
+          <h4>District</h4>
+          <mat-form-field>
+            <mat-select placeholder="Favorite food">
+              <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{food.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+  </ng-template>
+  </mat-tab>
+  <mat-tab label="Total score of party">
+    <ng-template matTabContent>
+      <div class="grid" *ngIf="partyBallotCounts$">
+        <div>
+          <canvas baseChart
+                  [datasets]="barChartData2"
+                  [labels]="barChartLabels2"
+                  [options]="barChartOptions2"
+                  [legend]="barChartLegend"
+                  [chartType]="barChartType">
+          </canvas>
+        </div>
+        <div>
+          <h1>Statistics</h1>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis animi, vitae consectetur similique perspiciatis deserunt assumenda! Non accusamus nostrum placeat? Veniam illo assumenda perferendis qui, beatae praesentium modi ducimus deserunt.
+          </p>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio voluptates asperiores laborum, iusto alias quasi facilis? Laboriosam, neque error ipsam, ut quisquam ratione ab dolore mollitia itaque eaque libero natus?
+          </p>
+        </div>
+      </div>
+    </ng-template>
+  </mat-tab>
+  <mat-tab label="Party ratio">
+    <ng-template matTabContent>
+      <div class="grid" *ngIf="candidateBallotCounts$">
+        <app-piechart></app-piechart>
+        <div>
+          <h1>Analysis</h1>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis animi, vitae consectetur similique perspiciatis deserunt assumenda! Non accusamus nostrum placeat? Veniam illo assumenda perferendis qui, beatae praesentium modi ducimus deserunt.
+          </p>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio voluptates asperiores laborum, iusto alias quasi facilis? Laboriosam, neque error ipsam, ut quisquam ratione ab dolore mollitia itaque eaque libero natus?
+          </p>
+        </div>
+      </div>
+    </ng-template>
+  </mat-tab>
+</mat-tab-group>

@@ -7,18 +7,23 @@ import { User } from '../models/User';
   providedIn: 'root'
 })
 export class DataService {
-  private baseUrl = "https://35.186.153.108";
+  private baseUrl = "https://localhost";
 
   constructor(private http: HttpClient) { }
 
   login(user: User) {
     return this.http.post<User>(this.baseUrl+'/users/login', user); 
   }
+
   vote(vote: any) {
     return this.http.post(this.baseUrl+'/multichain/publish', vote);
   }
 
-  getRep(area: string) {
-    return this.http.get(this.baseUrl+"/api/area/"+area);
+  getRep(area: string, province: string) {
+    return this.http.get(this.baseUrl+"/api/area/"+area+"/"+province);
+  }
+
+  getResult(key: string) {
+    return this.http.get(this.baseUrl+"/multichain/count/test3/"+key);
   }
 }

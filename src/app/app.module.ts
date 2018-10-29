@@ -19,6 +19,16 @@ import { VoteComponent } from './vote/vote.component';
 import { ResultComponent } from './result/result.component';
 import { DataService } from './services/data.service';
 import { MatCardModule } from '@angular/material/card';
+import { LoaderComponent } from './loader/loader.component';
+import { StatisticsComponent } from './statistics/statistics.component';
+import { ChartsModule } from 'ng2-charts';
+import { HorizontalComponent } from './horizontal/horizontal.component';
+import { DoughnutComponent } from './doughnut/doughnut.component';
+import { PiechartComponent } from './piechart/piechart.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -28,13 +38,18 @@ import { MatCardModule } from '@angular/material/card';
     LoginComponent,
     VoteComponent,
     ResultComponent,
+    LoaderComponent,
+    StatisticsComponent,
+    HorizontalComponent,
+    DoughnutComponent,
+    PiechartComponent,
   ],
   imports: [
     RouterModule.forRoot([
       { path: '', component: HomeComponent, data: {depth: 1}},
       { path: 'login', component: LoginComponent, data: {depth: 2}},
       { path: 'vote', component: VoteComponent, data: {depth: 3}},
-      { path: 'result', component: ResultComponent, data: {depth: 2}},
+      { path: 'result', component: StatisticsComponent, data: {depth: 2}},
       {
         path: '**',
         component: LoginComponent, data: {depth: 2}
@@ -56,7 +71,12 @@ import { MatCardModule } from '@angular/material/card';
     HttpClientModule,
     MatNativeDateModule,
     ReactiveFormsModule,
-    MatCardModule
+    MatCardModule,
+    ChartsModule,
+    MatTabsModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatDialogModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

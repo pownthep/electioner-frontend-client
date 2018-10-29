@@ -3,7 +3,7 @@
   <div id="form-container" [class.full-width-height]="(isHandset$ | async)!" class="w4-h5">
     <form [formGroup]="login" #f="ngForm" (ngSubmit)="onSubmit(f)" >
       <div class="animated slideInDown">
-        <img src="../assets/icons/electioner.svg" alt="">
+        <h1 style="color:teal;">Electioner</h1>
       </div>
       <mat-form-field class="full-width" color="primary">
         <input matInput placeholder="Username" formControlName="username" required>
@@ -12,7 +12,7 @@
         <input type="password" matInput placeholder="Password" formControlName="password" required>
       </mat-form-field>
       <div>
-        <button mat-raised-button color="primary" type="submit">Login</button>
+        <button mat-stroked-button color="primary" type="submit">Login</button>
       </div>
     </form>
   </div>

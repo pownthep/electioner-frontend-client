@@ -24,6 +24,22 @@
         opacity: 0;
         transition: opacity .35s ease;
     }
+    .name {
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity .35s ease;
+    }
+    .party {
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity .35s ease;
+    }
     .overlay {
         position: absolute;
         top: 0%;
@@ -54,6 +70,14 @@
     }
 }
 .example-card:hover .button{
+    opacity: 1;
+}
+
+.example-card:hover .name{
+    opacity: 1;
+}
+
+.example-card:hover .party{
     opacity: 1;
 }
 
