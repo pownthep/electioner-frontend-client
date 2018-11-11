@@ -1,21 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'chart.js';
 import { DataService } from '../services/data.service';
-export interface Food {
-  value: string;
-  viewValue: string;
-}
+
 @Component({
   selector: 'app-statistics',
   templateUrl: './statistics.component.html',
   styleUrls: ['./statistics.component.scss']
 })
 export class StatisticsComponent implements OnInit {
-  foods: Food[] = [
-    {value: 'steak-0', viewValue: '01'},
-    {value: 'pizza-1', viewValue: '02'},
-    {value: 'tacos-2', viewValue: '03'}
-  ];
   candidateBallotCounts$;
   partyBallotCounts$;
   public barChartLabels1 = [];
@@ -67,7 +59,7 @@ export class StatisticsComponent implements OnInit {
 
 
   public barChartData1 = [
-    {data: this.candidateCount, label: 'Ballot counts',  backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"]}
+    {data: this.candidateCount, label: 'Ballot counts',  backgroundColor: ["rgba(255, 99, 132, 0.2)"]}
   ];
   public barChartData2 = [
     {data: this.partyCount, label: 'Ballot counts'}

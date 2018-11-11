@@ -1,24 +1,31 @@
+<mat-toolbar style="height: 5vh;" color="primary" class="mat-elevation-z6">
+    <a routerLink="" style="color: white; margin-top: 8px;"><i class="material-icons">
+      home
+      </i></a>
+    <span class="example-fill-remaining-space"></span>
+    <span>THAILAND ELECTION</span>
+  </mat-toolbar>
 <div>
-    <div style="text-align:center; padding: 10px;" class="animated slideInDown">
-        <p style="margin:50px; font-size: 30pt"></p>
-    </div>
     <div id="vote-cards-wrapper">
-        <div class="example-card mat-elevation-z4" *ngFor="let candidate of candidates$" style="margin-bottom:20px;"> 
-            <img mat-card-image src="../assets/jpg/c3.jpeg" alt="">
-            <div class="overlay"></div>
-            <div class="name">
-                <p style="color: white; font-size: auto">
-                    {{candidate.fname}} {{candidate.lname}}
-                </p>
+        <div *ngFor="let candidate of candidates$">
+            <div class="example-card mat-elevation-z4" style="margin-bottom:20px;"> 
+                <img mat-card-image src="{{candidate.url}}" alt="">
+                <div class="overlay"></div>
+                <div class="name">
+                    <p style="color: white; font-size: auto">
+                        {{candidate.fname}} {{candidate.lname}}
+                    </p>
+                </div>
+                <div class="button">
+                    <a (click)="onVote(candidate._id)">โหวต</a>
+                </div>
+                <div class="party">
+                    <p style="color: white; font-size: auto">
+                        {{candidate.party}}
+                    </p>
+                </div>
             </div>
-            <div class="button">
-                <a (click)="onVote(candidate._id)">โหวต</a>
-            </div>
-            <div class="party">
-                <p style="color: white; font-size: auto">
-                    {{candidate.party}}
-                </p>
-            </div>
+            <mat-divider [vertical]="true"></mat-divider>
         </div>
         <app-loader *ngIf="showSpinner"></app-loader>
     </div>

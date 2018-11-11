@@ -6,18 +6,19 @@
   }
   * {
       stroke-width: 1px;
-      stroke: black;
+      stroke: #3F51B5;
       fill: transparent;
   }
   #result-wrapper #map {
-    transform: scale(0.6);
+    //transform: scale(0.6);
     text-align: center;
-    //background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+    margin-top: 20px;
+    //background-color: #E0F2F1;
   }
   #result-wrapper #map svg {
     float: left;
   }
-  
+  /*
   #result-wrapper #map #TH-10
   {
     fill: #f28500;
@@ -143,12 +144,12 @@
     fill:#b4b1d0;
     transition: transform 0.2s;
   }
-  
+  */
   #result-wrapper #map #TH-10:hover, #result-wrapper #map #TH-11:hover, #result-wrapper #map #TH-12:hover, #result-wrapper #map #TH-13:hover, #result-wrapper #map #TH-14:hover, #result-wrapper #map #TH-15:hover, #result-wrapper #map #TH-16:hover, #result-wrapper #map #TH-17:hover, #result-wrapper #map #TH-18:hover, #result-wrapper #map #TH-19:hover, #result-wrapper #map #TH-72:hover, #result-wrapper #map #TH-73:hover, #result-wrapper #map #TH-74:hover, #result-wrapper #map #TH-75:hover, #result-wrapper #map #TH-70:hover, #result-wrapper #map #TH-71:hover, #result-wrapper #map #TH-76:hover, #result-wrapper #map #TH-77:hover, #result-wrapper #map #TH-20:hover, #result-wrapper #map #TH-21:hover, #result-wrapper #map #TH-22:hover, #result-wrapper #map #TH-23:hover, #result-wrapper #map #TH-24:hover, #result-wrapper #map #TH-25:hover, #result-wrapper #map #TH-26:hover, #result-wrapper #map #TH-27:hover {
-    transform: scale(1.01);
-    fill: #e91e63;
+    //transform: scale(1.01);
+    fill: #E8EAF6;
   }
-  
+  /*
   #result-wrapper #map #TH-50
   {
     fill: #feb0c0;
@@ -232,13 +233,13 @@
     fill: #38f314;
     transition: transform 0.2s;
   }
-  
+  */
   
   #result-wrapper #map #TH-50:hover, #result-wrapper #map #TH-51:hover, #result-wrapper #map #TH-52:hover, #result-wrapper #map #TH-53:hover, #result-wrapper #map #TH-54:hover, #result-wrapper #map #TH-55:hover, #result-wrapper #map #TH-56:hover, #result-wrapper #map #TH-57:hover, #result-wrapper #map #TH-58:hover, #result-wrapper #map #TH-60:hover, #result-wrapper #map #TH-61:hover, #result-wrapper #map #TH-62:hover, #result-wrapper #map #TH-63:hover, #result-wrapper #map #TH-64:hover, #result-wrapper #map #TH-65:hover, #result-wrapper #map #TH-66:hover, #result-wrapper #map #TH-67:hover {
-    transform: scale(1.01);
-    fill: #e91e63;
+    //transform: scale(1.01);
+    fill: #E8EAF6;
   }
-  
+  /*
   #result-wrapper #map #TH-30
   {
     fill: #37f2aa;
@@ -329,12 +330,12 @@
     fill: #d33010;
     transition: transform 0.2s;
   }
-  
+  */
   #result-wrapper #map #TH-30:hover, #result-wrapper #map #TH-31:hover, #result-wrapper #map #TH-32:hover, #result-wrapper #map #TH-33:hover, #result-wrapper #map #TH-34:hover, #result-wrapper #map #TH-35:hover, #result-wrapper #map #TH-36:hover, #result-wrapper #map #TH-37:hover, #result-wrapper #map #TH-38:hover, #result-wrapper #map #TH-39:hover, #result-wrapper #map #TH-40:hover, #result-wrapper #map #TH-41:hover, #result-wrapper #map #TH-42:hover, #result-wrapper #map #TH-43:hover, #result-wrapper #map #TH-44:hover, #result-wrapper #map #TH-45:hover, #result-wrapper #map #TH-46:hover, #result-wrapper #map #TH-47:hover, #result-wrapper #map #TH-48:hover, #result-wrapper #map #TH-49:hover {
-    transform: scale(1.01);
-    fill: #e91e63;
+    //transform: scale(1.01);
+    fill: #E8EAF6;
   }
-  
+  /*
   #result-wrapper #map #TH-80
   {
     fill: #f6c25b;
@@ -409,10 +410,10 @@
     fill: #f92e06;
     transition: transform 0.2s;
   }
-  
+  */
   #result-wrapper #map #TH-80:hover, #result-wrapper #map #TH-81:hover, #result-wrapper #map #TH-82:hover, #result-wrapper #map #TH-83:hover, #result-wrapper #map #TH-84:hover, #result-wrapper #map #TH-85:hover, #result-wrapper #map #TH-86:hover, #result-wrapper #map #TH-90:hover, #result-wrapper #map #TH-91:hover, #result-wrapper #map #TH-92:hover, #result-wrapper #map #TH-93:hover, #result-wrapper #map #TH-94:hover, #result-wrapper #map #TH-95:hover, #result-wrapper #map #TH-96:hover, #result-wrapper #map #TH-LKSG:hover {
-    transform: scale(1.01);
-    fill: #e91e63;
+    //transform: scale(1.01);
+    fill: #E8EAF6;
   }
   .c2 {
     grid-template-columns: 50% auto;

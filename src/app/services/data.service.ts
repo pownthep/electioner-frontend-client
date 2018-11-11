@@ -7,7 +7,7 @@ import { User } from '../models/User';
   providedIn: 'root'
 })
 export class DataService {
-  private baseUrl = "https://localhost";
+  private baseUrl = "http://localhost";
 
   constructor(private http: HttpClient) { }
 
@@ -20,10 +20,10 @@ export class DataService {
   }
 
   getRep(area: string, province: string) {
-    return this.http.get(this.baseUrl+"/api/area/"+area+"/"+province);
+    return this.http.get(this.baseUrl+"/api/rep");
   }
 
   getResult(key: string) {
-    return this.http.get(this.baseUrl+"/multichain/count/test3/"+key);
+    return this.http.get(this.baseUrl+"/multichain/count/test4/"+key);
   }
 }
