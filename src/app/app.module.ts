@@ -29,6 +29,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDialogModule} from '@angular/material/dialog';
+import { CandidatesComponent } from './candidates/candidates.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     HorizontalComponent,
     DoughnutComponent,
     PiechartComponent,
+    CandidatesComponent,
   ],
   imports: [
     RouterModule.forRoot([
@@ -50,6 +52,7 @@ import {MatDialogModule} from '@angular/material/dialog';
       { path: 'login', component: LoginComponent, data: {depth: 2}},
       { path: 'vote', component: VoteComponent, data: {depth: 3}},
       { path: 'result', component: StatisticsComponent, data: {depth: 2}},
+      { path: 'candidates', component: CandidatesComponent, data: {depth: 2}},
       {
         path: '**',
         component: LoginComponent, data: {depth: 2}
