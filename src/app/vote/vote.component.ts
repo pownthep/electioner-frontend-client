@@ -22,31 +22,31 @@ export class VoteComponent implements OnInit {
   +UTt985Zk/Ok9jgGRDPS312vKzqFALVj3tX+ZV/g7NyWCkN1LdW9peUZRxqrHxI5
   dwIDAQAB  
   -----END PUBLIC KEY-----`;
+  public rsa = forge.pki.rsa;
   private publicKey = forge.pki.publicKeyFromPem(this.publicKeyPem);
   public candidates$;
-  constructor( private data: DataService) { }
+  constructor( private data: DataService) { 
+  }
   public showSpinner: boolean = true;
   ngOnInit() {
-    this.data.getRep("01", "แพร่").subscribe(
+    this.data.getRep("1","").subscribe(
       data => {this.candidates$ = data; console.log(this.candidates$); this.showSpinner = false},
       err => {this.candidates$ = {}}
     )
+    console.log(localStorage["PUBLIC_KEY"]);
   }
 
   onVote(id: string){
-    //for(var i = 0; i< 100000; i++) {
       var tmp = this.publicKey.encrypt(id);
       console.log('Message to be sent: ' + '"'+id+'"');
       console.log('Encrypted message to be sent: ' + '"'+tmp+'"');
-      var vote = new Vote("test3", "01", tmp);
+      var vote = new Vote("test4", "01", tmp);
       this.data.vote(vote).subscribe(
         data => {
           console.log('Transaction id: ' + data);
-          //this.route.navigate(['']);
         },
         err => console.log(err)
       )
-    //}
   }
 
   public getBase64Encrypted(randomWordArray, pemKey): string {

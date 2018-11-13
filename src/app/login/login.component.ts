@@ -6,7 +6,6 @@ import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
 import { DataService } from '../services/data.service';
 import { User } from '../models/User';
 import { Router } from '@angular/router';
-import { trigger, transition, group, query, style, animate } from '@angular/animations';
 
 
 @Component({
@@ -26,19 +25,12 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.login = this._formBuilder.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required]
+      username: ['', Validators.required]
     });
   }
 
   onSubmit(form: NgForm){
-    var user = new User(form.value.username, form.value.password);
-    console.log(user);
-    this.data.login(user).subscribe(
-      data => {
-        this.router.navigate(['/vote']);
-      },
-      err => console.log(err)
-    );
+    localStorage["PUBLIC_KEY"] = form.value.username;
+    this.router.navigate(['/vote']);
   }
 }

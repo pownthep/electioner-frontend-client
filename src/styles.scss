@@ -14,3 +14,9 @@ body {
     letter-spacing: 1px;
 }
 
+.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 6;
+}
+
