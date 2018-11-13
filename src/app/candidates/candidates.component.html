@@ -1,0 +1,31 @@
+<section id="search-box">
+  <div id="container">
+    <mat-form-field class="search">
+      <input matInput type="text" placeholder="Search" [(ngModel)]="value">
+      <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+        <mat-icon>backspace</mat-icon>
+      </button>
+      <button type="submit" mat-button matSuffix mat-icon-button aria-label="Search">
+        <mat-icon>search</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+</section>
+
+<section id="party-can">
+      <div id="party">
+        <img src="../assets/svg/th-democrat.svg" alt="" width="200px">
+      </div>
+      <mat-divider></mat-divider>
+      <div id="candidates">
+          <mat-card class="card">
+            <img mat-card-image src="../assets/jpg/candidate-1.jpg" alt="Photo of a Shiba Inu">
+          </mat-card>
+          <mat-card class="card">
+            <img mat-card-image src="../assets/jpg/candidate-2.jpg" alt="Photo of a Shiba Inu">
+          </mat-card>
+          <mat-card class="card">
+            <img mat-card-image src="../assets/jpg/candidate-3.jpg" alt="Photo of a Shiba Inu">
+          </mat-card>
+      </div>
+</section>

@@ -31,6 +31,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { OverviewComponent } from './overview/overview.component';
 import { TestComponent } from './test/test.component';
 import { AgmCoreModule } from '@agm/core';
+import { CandidatesComponent } from './candidates/candidates.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { AgmCoreModule } from '@agm/core';
     PiechartComponent,
     OverviewComponent,
     TestComponent,
+    CandidatesComponent,
   ],
   imports: [
     RouterModule.forRoot([
