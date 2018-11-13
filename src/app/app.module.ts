@@ -24,14 +24,14 @@ import { ChartsModule } from 'ng2-charts';
 import { HorizontalComponent } from './horizontal/horizontal.component';
 import { DoughnutComponent } from './doughnut/doughnut.component';
 import { PiechartComponent } from './piechart/piechart.component';
-import { MatTabsModule } from '@angular/material/tabs';
-import { MatSelectModule } from '@angular/material/select';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatDialogModule } from '@angular/material/dialog';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatDialogModule} from '@angular/material/dialog';
+import { CandidatesComponent } from './candidates/candidates.component';
+import { AgmCoreModule } from '@agm/core';
 import { OverviewComponent } from './overview/overview.component';
 import { TestComponent } from './test/test.component';
-import { AgmCoreModule } from '@agm/core';
-import { CandidatesComponent } from './candidates/candidates.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +56,7 @@ import { CandidatesComponent } from './candidates/candidates.component';
       { path: 'login', component: LoginComponent, data: {depth: 2}},
       { path: 'vote', component: VoteComponent, data: {depth: 3}},
       { path: 'result', component: StatisticsComponent, data: {depth: 2}},
+      { path: 'candidates', component: CandidatesComponent, data: {depth: 2}},
       {
         path: '**',
         component: LoginComponent, data: {depth: 2}
