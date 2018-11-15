@@ -12,9 +12,6 @@ export const environment = {
     projectId: "electroner-216308",
     storageBucket: "electroner-216308.appspot.com",
     messagingSenderId: "874360431531"
-  },
-  mapbox: {
-    accessToken: 'pk.eyJ1IjoicG93bnRoZXAiLCJhIjoiY2pvaWRtMGJvMDF3YTNrbnhuOHVybHFrbyJ9.srROoa1Ovs8APRiLiTpS0Q'
   }
 };
 
