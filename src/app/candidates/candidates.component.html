@@ -12,20 +12,36 @@
   </div>
 </section>
 
-<section id="party-can">
+<!--<section id="party-can" *ngIf="candidates$">
       <div id="party">
         <img src="../assets/svg/th-democrat.svg" alt="" width="200px">
       </div>
       <mat-divider></mat-divider>
-      <div id="candidates">
+      <div id="candidates" *ngFor="let candidate of candidates$">
           <mat-card class="card">
-            <img mat-card-image src="../assets/jpg/candidate-1.jpg" alt="Photo of a Shiba Inu">
-          </mat-card>
-          <mat-card class="card">
-            <img mat-card-image src="../assets/jpg/candidate-2.jpg" alt="Photo of a Shiba Inu">
-          </mat-card>
-          <mat-card class="card">
-            <img mat-card-image src="../assets/jpg/candidate-3.jpg" alt="Photo of a Shiba Inu">
+            <img mat-card-image src="{{candidate.url}}" alt="Photo of a Shiba Inu">
           </mat-card>
       </div>
-</section>
+</section>-->
+<div>
+  <div id="vote-cards-wrapper">
+      <div *ngFor="let candidate of candidates$">
+          <div class="example-card mat-elevation-z4" style="margin-bottom:20px;"> 
+              <img mat-card-image src="{{candidate.url}}" alt="">
+              <div class="overlay"></div>
+              <div class="name">
+                  <p style="color: white; font-size: auto">
+                      {{candidate.fname}} {{candidate.lname}}
+                  </p>
+              </div>
+              <div class="party">
+                  <p style="color: white; font-size: auto">
+                      {{candidate.party}}
+                  </p>
+              </div>
+          </div>
+          <mat-divider [vertical]="true"></mat-divider>
+      </div>
+      <app-loader *ngIf="showSpinner"></app-loader>
+  </div>
+</div>
