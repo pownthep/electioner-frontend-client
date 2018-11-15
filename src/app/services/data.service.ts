@@ -24,6 +24,6 @@ export class DataService {
   }
 
   getResult(key: string) {
-    return this.http.get(this.baseUrl+"/multichain/count/test4/"+key);
+    return this.http.get(this.baseUrl+"/users/decrypt");
   }
 }

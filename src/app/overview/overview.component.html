@@ -1,4 +1,8 @@
-<div>
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+        <h2>{{location}}</h2>
+        <app-horizontal></app-horizontal>
+    </mat-drawer>
     <div *ngIf="lat && lng" style="padding: 0px; overflow-y: hidden;">
         <agm-map 
         [latitude]="lat"
@@ -6,35 +10,18 @@
         [zoom]="zoom"
         [disableDefaultUI]="false"
         [zoomControl]="false"
-        (mapClick)="mapClicked($event)">
-      
-        <agm-marker 
-            *ngFor="let m of markers; let i = index"
-            (markerClick)="clickedMarker(m.label, i)"
-            [latitude]="m.lat"
-            [longitude]="m.lng"
-            [label]="m.label"
-            [markerDraggable]="m.draggable"
-            (dragEnd)="markerDragEnd(m, $event)">
-            
-          <agm-info-window>
-              <strong>{{location}}</strong>
-              <p *ngIf="result">
-                {{result[0] | json}} <br>
-                {{result[1] | json}}
-              </p>
-          </agm-info-window>
-          
-        </agm-marker>
-        
-        <agm-circle [latitude]="lat + 0.3" [longitude]="lng" 
-            [radius]="5000"
-            [fillColor]="'red'"
-            [circleDraggable]="true"
-            [editable]="true">
-        </agm-circle>
-      
-      </agm-map>
-    
-    <div>
-</div>
+        [styles]="styles"
+        (mapClick)="mapClicked($event)"
+        (click)="drawer.opened ? drawer.open():drawer.toggle()">
+            <agm-marker 
+                *ngFor="let m of markers; let i = index"
+                (markerClick)="drawer.toggle()"
+                [latitude]="m.lat"
+                [longitude]="m.lng"
+                [label]="m.label"
+                [markerDraggable]="m.draggable"
+                (dragEnd)="markerDragEnd(m, $event)">
+            </agm-marker>
+        </agm-map>
+    </div>
+</mat-drawer-container>

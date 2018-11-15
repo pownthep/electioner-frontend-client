@@ -7,40 +7,66 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./horizontal.component.scss']
 })
 export class HorizontalComponent implements OnInit {
-  ballotCounts$;
-  public barChartLabels = [];
-  public count = [];
+  candidateBallotCounts$;
+  partyBallotCounts$;
+  public barChartLabels1 = [];
+  public barChartLabels2 = [];
+  public candidateCount = [];
+  public partyCount = [];
+  public pieChartType = 'pie';
   constructor(private data: DataService) { 
     this.data.getResult("01").subscribe(
       data => {
-        console.log(data);
-        this.ballotCounts$ = data[0];
-        for (var key in this.ballotCounts$) {
-          if (this.ballotCounts$.hasOwnProperty(key)) {
-            console.log(key);
-            this.barChartLabels.push(key.toString());
-            this.count.push(this.ballotCounts$[key]);
+        this.candidateBallotCounts$ = data[0];
+        this.partyBallotCounts$ = data[1];
+        for (var key in this.candidateBallotCounts$) {
+          if (this.candidateBallotCounts$.hasOwnProperty(key)) {
+            this.barChartLabels1.push(key.toString());
+            this.candidateCount.push(this.candidateBallotCounts$[key]);
           }
         }
-
+        for (var key in this.partyBallotCounts$) {
+          if (this.partyBallotCounts$.hasOwnProperty(key)) {
+            this.barChartLabels2.push(key.toString());
+            this.partyCount.push(this.partyBallotCounts$[key]);
+          }
+        }
+        console.log(this.barChartLabels1);
+        console.log(this.barChartLabels2);
       },
-      err => this.ballotCounts$ = {}
+      err => this.candidateBallotCounts$ = {}
     )
   }
 
-  public barChartOptions = {
+  public barChartOptions1 = {
+    scaleShowVerticalLines: false,
+    responsive: true,
+    title: {
+      display: true
+    }
+  };
+  public barChartOptions2 = {
     scaleShowVerticalLines: false,
     responsive: true,
     title: {
       display: true,
-      text: 'Candidates in distance '
+      text: 'Party '
     }
   };
   public barChartType = 'horizontalBar';
   public barChartLegend = true;
-  public barChartData = [
-    {data: this.count, label: 'Ballot counts'}
+  public barChartData1 = [
+    {data: this.candidateCount, label: 'Ballot counts'}
   ];
+  public pieChartOptions = {
+    scaleShowVerticalLines: false,
+    responsive: true,
+    title: {
+      display: true,
+      text: 'Party ratio'
+    }
+  };
+  public barChartData2 = this.partyCount;
   ngOnInit() {
 
   }

@@ -1,18 +1,18 @@
-<div style="display: block" *ngIf="ballotCounts$">
+<div style="display: block; width: 600px;" *ngIf="candidateBallotCounts$">
+  <h5>Candidates</h5>
   <canvas baseChart
-          [datasets]="barChartData"
-          [labels]="barChartLabels"
-          [options]="barChartOptions"
-          [legend]="barChartLegend"
-          [chartType]="barChartType">
+    [datasets]="barChartData1"
+    [labels]="barChartLabels1"
+    [options]="barChartOptions1"
+    [legend]="barChartLegend"
+    [chartType]="barChartType">
   </canvas>
 </div>
-<div style="display: block" *ngIf="ballotCounts$">
+<div style="display: block; width: 600px; margin-top: 50px;" *ngIf="partyBallotCounts$">
+  <h5>Party list</h5>
   <canvas baseChart
-          [datasets]="barChartData"
-          [labels]="barChartLabels"
-          [options]="barChartOptions"
-          [legend]="barChartLegend"
-          [chartType]="barChartType">
-  </canvas>
+    [data]="barChartData2"
+    [labels]="barChartLabels2"
+    [options]="pieChartOptions"
+    [chartType]="pieChartType"></canvas>
 </div>
