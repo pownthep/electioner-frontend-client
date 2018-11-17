@@ -1,5 +1,5 @@
 #home-wrapper{
-    @media screen and (max-width: 700px) {
+    @media screen and (max-width: 1200px) {
         height:60vh;
     }
     height:100%;
@@ -14,7 +14,7 @@
         grid-template-columns: 50% auto;
         margin-bottom: 0 !important;
         letter-spacing: 0;
-        @media screen and (max-width: 700px) {
+        @media screen and (max-width: 1200px) {
             height: 93%;
             display: grid;
         }
@@ -24,7 +24,7 @@
         }
     }
     #midground{
-        @media screen and (max-width: 700px) {
+        @media screen and (max-width: 1200px) {
             display: grid;
             grid-template-columns: 1fr;
         }
@@ -34,7 +34,7 @@
             .img{
                 margin-left: 15%;
                 margin-top: 9%;
-                @media screen and (max-width: 700px) {
+                @media screen and (max-width: 1200px) {
                     display: contents;
                     grid-template-columns: 1fr;
                     z-index: 0;
@@ -43,7 +43,7 @@
         }
         #right{
             #intro-text{
-                @media screen and (max-width: 700px) {
+                @media screen and (max-width: 1200px) {
                     padding-top: 2rem;
                     text-align: center;
                     z-index: 1;
@@ -54,7 +54,7 @@
                 font-size: 50px;
             }
             #semi-intro-text{
-                @media screen and (max-width: 700px) {
+                @media screen and (max-width: 1200px) {
                     text-align: auto;
                 }
                 margin-right: 10%;
@@ -63,7 +63,7 @@
                 font-size: 20px;
             }
             #Vote-now{
-                @media screen and (max-width: 700px) {
+                @media screen and (max-width: 1200px) {
                     text-align: center;
                     margin-right: 30%;
                 }
@@ -85,7 +85,7 @@
             #playstore{
                 padding-left: 34%;
                 padding-top: 3%;
-                @media screen and (max-width: 700px) {
+                @media screen and (max-width: 1200px) {
                     img{
                         padding-left: 10%;
                         padding-top: 3%;
@@ -111,7 +111,7 @@
             background-color: white;
             text-align: center;
             margin-left: 25%;
-            @media screen and (max-width: 700px) {
+            @media screen and (max-width: 1200px) {
                 display: none;
             }
             ul{
@@ -125,65 +125,61 @@
         }
     }
 }
-#second-home-wrapper{
-    height:100vh;
-    @media screen and (max-width: 700px) {
-        height:10vh;
+#howto-home-wrapper{
+    background-color: #ffff8f;
+    height: 30vh;
+    @media screen and (max-width: 1200px) {
+        height:20vh;
     }
-    #second-background{
-        background-color: #ffff8f;
-        width: 100%;
-        height: 50%;
-        z-index: -1;
-        position: absolute;
-        display: grid;
-        grid-template-columns: 50% auto;
-        margin-bottom: 0 !important;
-        letter-spacing: 0;
-        @media screen and (max-width: 700px) {
-            height: 93%;
-            display: grid;
+    #howto-container{
+        #intro-text{
+            padding-top: 10%;
+            text-align: center;
+            font-weight: 700;
+            font-size: 50px;
         }
-        #s-left{
+    }
+}
 
-        }
-        #s-right{
+#second-home-wrapper{
+    background-color: #ffff8f;
+    height:50vh;
+    @media screen and (max-width: 1200px) {
+        height:40vh;
+    }
+    #howto-container{
+        padding-top: 2%;
+        text-align: center;
+        ul{
+            display: inline;
+            @media screen and (max-width: 1200px) {
+                display: none;
+            }
+            li{
+                @media screen and (max-width: 1200px) {
+                    display: none;
+                }
+                display: inline;
+                margin: 7%;
+            }
         }
     }
-    #second-midground{
-        @media screen and (max-width: 700px) {
-            display: grid;
-            grid-template-columns: 1fr;
-        }
-        display: grid;
-        grid-template-columns: 50% auto;
-        #s-left{
-            #s-intro-text{
-                @media screen and (max-width: 700px) {
-                    padding-top: 0rem;
-                    text-align: center;
-                }
-                margin-right: 10%;
-                margin-left: 10%;
-                padding-top: 23rem;
-                font-weight: 1000;
-                font-size: 50px;
+    #howto-container-text{
+        padding-top: 2%;
+        text-align: center;
+        ul{
+            display: inline;
+            @media screen and (max-width: 1200px) {
+                display: contents;
             }
-            #s-semi-intro-text{
-                @media screen and (max-width: 700px) {
-                    text-align: auto;
+            li{
+                @media screen and (max-width: 1200px) {
+                    display: block;
                 }
-                margin-right: 10%;
-                margin-left: 10%;
+                display: inline;
+                margin: 5%;
                 font-weight: 700;
-                font-size: 20px;
-            }
-        }
-        #s-right{
-            .img{
-                @media screen and (max-width: 700px) {
-                    display: contents;
-                }
+                font-size: 30px;
             }
         }
     }
