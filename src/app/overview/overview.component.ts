@@ -218,14 +218,18 @@ export class OverviewComponent{
     this.http.get("https://maps.googleapis.com/maps/api/geocode/json?latlng="+$event.coords.lat+","+$event.coords.lng+"&key="+'AIzaSyAv1WgLGclLIlhKvzIiIVOiqZqDA0EM9TI').subscribe(
       data => {
         this.location = data;
-        this.location = this.location.plus_code.compound_code.split(',')[2];
+        if(this.location.plus_code.compound_code.split(',').length < 4) {
+          this.location = 'Bangkok';
+        }
+        else {
+          this.location = this.location.plus_code.compound_code.split(',')[2]
+        }
       },
       err => {console.log(err)}
     );
     this.data.getResult("1").subscribe(
       data => {
         this.result = data;
-        console.log(this.result[0]);
       },
       err => this.result = err
     );

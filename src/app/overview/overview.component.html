@@ -1,6 +1,6 @@
 <mat-drawer-container class="example-container" autosize>
-    <mat-drawer #drawer class="example-sidenav" mode="side">
-        <h2>{{location}}</h2>
+    <mat-drawer #drawer class="example-sidenav" mode="over">
+        <h4>{{location}}</h4>
         <app-horizontal></app-horizontal>
     </mat-drawer>
     <div *ngIf="lat && lng" style="padding: 0px; overflow-y: hidden;">

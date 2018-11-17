@@ -31,8 +31,6 @@ export class HorizontalComponent implements OnInit {
             this.partyCount.push(this.partyBallotCounts$[key]);
           }
         }
-        console.log(this.barChartLabels1);
-        console.log(this.barChartLabels2);
       },
       err => this.candidateBallotCounts$ = {}
     )

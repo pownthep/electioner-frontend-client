@@ -7,7 +7,7 @@ import { User } from '../models/User';
   providedIn: 'root'
 })
 export class DataService {
-  private baseUrl = "http://localhost";
+  private baseUrl = "https://electioner.tk";
 
   constructor(private http: HttpClient) { }
 
@@ -23,7 +23,15 @@ export class DataService {
     return this.http.get(this.baseUrl+"/api/rep");
   }
 
+  getRepByParty(party: string) {
+    return this.http.post(this.baseUrl+"/api/listreps",{party: party});
+  }
+
   getResult(key: string) {
     return this.http.get(this.baseUrl+"/users/decrypt");
+  }
+
+  getParties() {
+    return this.http.get(this.baseUrl+'/api/party');
   }
 }

@@ -1,5 +1,5 @@
 #search-box{
-    height: 6vh;
+    width: 100vw;
     #container{
         .search{
             float: right;
@@ -63,7 +63,7 @@
 
 .example-card {
     width: 450px;
-    height: 600px;
+    height: 650px;
     overflow: hidden;
     position: relative;
     display: inline-block;
@@ -153,4 +153,12 @@
     /* This fills the remaining space, by using flexbox. 
        Every toolbar row uses a flexbox row layout. */
     flex: 1 1 auto;
-  }
+}
+
+.select-field{
+    width: 15vw;
+    @media screen and (max-width: 700px) {
+        width: 100vw;
+        padding: 20px;
+    }
+}
