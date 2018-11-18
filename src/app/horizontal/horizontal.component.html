@@ -1,4 +1,4 @@
-<div style="display: block; width: 600px;" *ngIf="candidateCount.length > 0">
+<div style="display: block; width: 600px;" *ngIf="candidateBallotCounts$">
   <h5>Candidates</h5>
   <canvas baseChart
     [datasets]="barChartData1"
@@ -8,7 +8,7 @@
     [chartType]="barChartType">
   </canvas>
 </div>
-<div style="display: block; width: 600px; margin-top: 50px;" *ngIf="partyCount.length > 0">
+<div style="display: block; width: 600px; margin-top: 50px;" *ngIf="partyBallotCounts$">
   <h5>Party list</h5>
   <canvas baseChart
     [data]="barChartData2"

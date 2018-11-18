@@ -19,21 +19,22 @@
     </mat-form-field>
 </div>
 <div>
+  <div style="text-align:center;">
+    <img src="{{selected.url}}" alt="" style="max-width: 400px;">
+  </div>
+  <mat-divider></mat-divider>
   <div id="vote-cards-wrapper" *ngIf="candidates$">
-      <div *ngFor="let candidate of candidates$">
-          <div class="example-card mat-elevation-z4" style="margin-bottom:20px;"> 
-              <img mat-card-image src="{{candidate.url}}" alt="">
-              <div class="overlay"></div>
-              <div class="name">
-                  <h1 style="color: white; font-size: 18pt">
-                      {{candidate.fname}} {{candidate.lname}}
-                  </h1>
-              </div>
-              <div class="party">
-                <img src="{{selected.url}}" alt="" style="max-height: 120px;">
-              </div>
+    <div *ngFor="let candidate of candidates$">
+        <div class="example-card mat-elevation-z4" style="margin-bottom:20px;"> 
+            <img mat-card-image src="{{candidate.url}}" alt="" >
+            <div class="overlay"></div>
           </div>
-          <mat-divider [vertical]="true"></mat-divider>
-      </div>
+          <div style="text-align: center;">
+              <h1 style="color: black; font-size: 18pt">
+                  {{candidate.fname}} {{candidate.lname}}
+              </h1>
+          </div>
+        <mat-divider [vertical]="true"></mat-divider>
+    </div>
   </div>
 </div>

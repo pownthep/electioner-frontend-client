@@ -15,7 +15,7 @@ export class HorizontalComponent implements OnInit {
   public partyCount = [];
   public pieChartType = 'pie';
   constructor(private data: DataService) { 
-    this.data.getResult("01").subscribe(
+    this.data.getResult().subscribe(
       data => {
         this.candidateBallotCounts$ = data[0];
         this.partyBallotCounts$ = data[1];

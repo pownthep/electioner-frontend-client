@@ -10,6 +10,7 @@ import { DataService } from '../services/data.service';
 })
 export class OverviewComponent{ 
   showFiller = false;
+  public selected = '';
   public styles = [
     {
       "elementType": "geometry",
@@ -196,9 +197,36 @@ export class OverviewComponent{
       ]
     }
   ];
-
+  public candidateBallotCounts$;
+  public partyBallotCounts$;
+  public barChartLabels1 = [];
+  public barChartLabels2 = [];
+  public candidateCount = [];
+  public partyCount = [];
+  public pieChartType = 'pie';
   public location;
-  public result;
+  public districts;
+  public barChartOptions1 = {
+    scaleShowVerticalLines: false,
+    responsive: true,
+    title: {
+      display: true
+    }
+  };
+  public barChartType = 'horizontalBar';
+  public barChartLegend = true;
+  public barChartData1 = [
+    {data: this.candidateCount, label: 'Ballot counts'}
+  ];
+  public pieChartOptions = {
+    scaleShowVerticalLines: false,
+    responsive: true,
+    title: {
+      display: true,
+      text: 'Party ratio'
+    }
+  };
+  public barChartData2 = this.partyCount;
   // google maps zoom level
   zoom: number = 6;
   
@@ -207,7 +235,19 @@ export class OverviewComponent{
   lng: number = 100.5018;
 
   constructor(private http: HttpClient, private data: DataService) {
-    
+    this.data.getResult().subscribe(
+      data => {
+        this.candidateBallotCounts$ = data[0];
+        this.partyBallotCounts$ = data[1];
+        for (var key in this.partyBallotCounts$) {
+          if (this.partyBallotCounts$.hasOwnProperty(key)) {
+            this.barChartLabels2.push(key.toString());
+            this.partyCount.push(this.partyBallotCounts$[key]);
+          }
+        }
+      },
+      err => this.candidateBallotCounts$ = {}
+    )
   }
 
   clickedMarker(label: string, index: number) {
@@ -215,26 +255,31 @@ export class OverviewComponent{
   }
   
   mapClicked($event: MouseEvent) {
+    this.candidateCount.length = 0;
+    this.barChartLabels1.length = 0;
     this.http.get("https://maps.googleapis.com/maps/api/geocode/json?latlng="+$event.coords.lat+","+$event.coords.lng+"&key="+'AIzaSyAv1WgLGclLIlhKvzIiIVOiqZqDA0EM9TI').subscribe(
       data => {
         this.location = data;
+        this.districts = [];
         if(this.location.plus_code.compound_code.split(',').length < 4) {
           this.location = 'Bangkok';
+          if(this.candidateBallotCounts$[this.location]) {
+            for(let district of this.candidateBallotCounts$[this.location]) {
+              this.districts.push(district.district);
+            }
+          }
         }
         else {
-          this.location = this.location.plus_code.compound_code.split(',')[2]
+          this.location = this.location.plus_code.compound_code.split(',')[2];
+          if(this.candidateBallotCounts$[this.location.replace(/ /g,'')]) {
+            for(let district of this.candidateBallotCounts$[this.location.replace(/ /g,'')]) {
+              this.districts.push(district.district);
+            }
+          }
         }
       },
       err => {console.log(err)}
     );
-    this.data.getResult("1").subscribe(
-      data => {
-        this.result = data;
-      },
-      err => this.result = err
-    );
-    console.log($event.coords.lat);
-    console.log($event.coords.lng);
     let tmp:marker = {
       lat: $event.coords.lat,
       lng: $event.coords.lng,
@@ -243,7 +288,23 @@ export class OverviewComponent{
     }
     this.markers[0] = tmp;
   }
-  
+  onSelect() {
+    this.candidateCount.length = 0;
+    this.barChartLabels1.length = 0;
+    if(this.candidateBallotCounts$[this.location.replace(/ /g,'')]) {
+      for(let district of this.candidateBallotCounts$[this.location.replace(/ /g,'')]) {
+        if(this.selected.localeCompare(district.district) == 0) {
+          for(let key in district.candidates) {
+            this.candidateCount.push(district.candidates[key].votes);
+            this.barChartLabels1.push(district.candidates[key].name);
+          }
+        }
+      }
+    }
+    this.barChartData1 = [
+      {data: this.candidateCount, label: 'Ballot counts'}
+    ];
+  }
   markerDragEnd(m: marker, $event: MouseEvent) {
     console.log('dragEnd', m, $event);
   }

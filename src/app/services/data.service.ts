@@ -27,8 +27,8 @@ export class DataService {
     return this.http.post(this.baseUrl+"/api/listreps",{party: party});
   }
 
-  getResult(key: string) {
-    return this.http.get(this.baseUrl+"/users/decrypt");
+  getResult() {
+    return this.http.get(this.baseUrl+"/users/result/latest");
   }
 
   getParties() {
