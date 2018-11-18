@@ -1,5 +1,5 @@
 <mat-drawer-container class="example-container" autosize>
-    <mat-drawer #drawer class="example-sidenav" mode="over" style="display: block; width: 700px;">
+    <mat-drawer #drawer class="example-sidenav" mode="over" style="display: block;">
         <h5>{{location}}</h5>
         <mat-form-field class="select-field">
             <mat-select placeholder="Districts" [(value)]="selected">
@@ -8,7 +8,7 @@
                 </mat-option>
             </mat-select>
         </mat-form-field>
-        <div style="display: block; width: 500px;" *ngIf="candidateCount.length > 0">
+        <div style="display: block; width: 700px;" *ngIf="candidateCount.length > 0">
             <h5>Candidates</h5>
             <div>
                 <canvas baseChart 
@@ -20,7 +20,7 @@
                 </canvas>
             </div>
         </div>
-        <div style="display: block; width: 500px; margin-top: 50px;" *ngIf="partyCount.length > 0">
+        <div style="display: block; width: 700px; margin-top: 50px;" *ngIf="partyCount.length > 0">
             <h5>Party list</h5>
             <canvas baseChart
                 [data]="barChartData2"
