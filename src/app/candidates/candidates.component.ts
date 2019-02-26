@@ -9,7 +9,7 @@ import { DataService } from '../services/data.service';
 export class CandidatesComponent implements OnInit, OnChanges {
   public candidates$;
   public party$;
-  public selected = '';
+  public selected;
 
   constructor(private data: DataService) { }
 

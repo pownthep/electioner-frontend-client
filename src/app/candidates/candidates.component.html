@@ -21,7 +21,7 @@
         </mat-select>
       </mat-form-field>
   </div>
-  <div>
+  <div *ngIf='selected'>
     <div style="text-align:center;">
       <img src="{{selected.url}}" alt="" style="max-width: 400px;">
     </div>
