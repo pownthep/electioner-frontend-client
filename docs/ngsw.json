@@ -1,0 +1,81 @@
+{
+  "configVersion": 1,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/favicon.ico",
+        "/index.html",
+        "/main.b343194e15189ef799c6.js",
+        "/polyfills.4cb330da289e53c437b5.js",
+        "/runtime.ec2944dd8b20ec099bf3.js",
+        "/scripts.806effac119676237f10.js",
+        "/styles.638234b708de7a65a156.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/assets/icons/google-play-badge.png",
+        "/assets/svg/Man.png",
+        "/assets/svg/angular.svg",
+        "/assets/svg/bg.svg",
+        "/assets/svg/download.svg",
+        "/assets/svg/mongo.svg",
+        "/assets/svg/mul.svg",
+        "/assets/svg/native.svg",
+        "/assets/svg/playstore.svg",
+        "/assets/svg/qr-code.svg",
+        "/assets/svg/search.svg",
+        "/assets/svg/voting.svg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/assets/icons/google-play-badge.png": "dd419939a0a518d0bd0da23fe3c22bd2835679e7",
+    "/assets/svg/Man.png": "5648b6a8c16e06ec344c3cfa25528e9c216c5351",
+    "/assets/svg/angular.svg": "2664c422397294f63d8acebbc9b7bccadf9ea1dd",
+    "/assets/svg/bg.svg": "815838f8e918bc58f47c201f08b9e600dfb76500",
+    "/assets/svg/download.svg": "fa27c2cd8de736b79fcc23a6c57e52ac9dec6e74",
+    "/assets/svg/mongo.svg": "b1ccfa7849c97e7d8687f2216c67d10476e742fd",
+    "/assets/svg/mul.svg": "45354f9ad74c8540996a0e81058a3c235c5d7d58",
+    "/assets/svg/native.svg": "d2ebfe0fee6e2d010e26b0ec8966dd88baee2484",
+    "/assets/svg/playstore.svg": "a03800aa1f6216076a7397a5a09080f3ba8d0a0c",
+    "/assets/svg/qr-code.svg": "8e0f4b4b3ed57f854a86a21ae90b3dbb5b0689ac",
+    "/assets/svg/search.svg": "879a80744390a21c622294d0154a3c2b8dfca933",
+    "/assets/svg/voting.svg": "965f989e8ca00d1bc2e2e853a7333b7f4a2c74ce",
+    "/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
+    "/index.html": "a227815c84c26c0caf0cd73b662e22eb00d67872",
+    "/main.b343194e15189ef799c6.js": "b3eeb5bf942a5e3a07bd88cf1c06c56e7bef7a22",
+    "/polyfills.4cb330da289e53c437b5.js": "bd5a39aa2918f02decb1ad0ab783be3478196d53",
+    "/runtime.ec2944dd8b20ec099bf3.js": "b62956c2192bfe5516d6374e753773901ed50ec5",
+    "/scripts.806effac119676237f10.js": "64578ccea55716fff16cb37502889712b619e46e",
+    "/styles.638234b708de7a65a156.css": "307707419c4344f8a01ca418353de88323b8f9b3"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
