@@ -29,10 +29,10 @@ export class VoteComponent implements OnInit {
   }
   public showSpinner: boolean = true;
   ngOnInit() {
-    this.data.getRep("1","").subscribe(
-      data => {this.candidates$ = data; console.log(this.candidates$); this.showSpinner = false},
-      err => {this.candidates$ = {}}
-    )
+    // this.data.getRep("1","").subscribe(
+    //   data => {this.candidates$ = data; console.log(this.candidates$); this.showSpinner = false},
+    //   err => {this.candidates$ = {}}
+    // )
     console.log(localStorage["PUBLIC_KEY"]);
   }
 

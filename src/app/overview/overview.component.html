@@ -1,51 +1,43 @@
-<mat-drawer-container class="example-container" autosize>
-    <mat-drawer #drawer class="example-sidenav" mode="over" style="display: block;">
-        <h5>{{location}}</h5>
-        <mat-form-field class="select-field">
-            <mat-select placeholder="Districts" [(value)]="selected">
-                <mat-option *ngFor="let district of districts" [value]="district" (click)="onSelect()">
-                {{district}}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
-        <div style="display: block; width: 700px;" *ngIf="candidateCount.length > 0">
-            <h5>Candidates</h5>
-            <div>
-                <canvas baseChart 
-                    [datasets]="barChartData1"
-                    [labels]="barChartLabels1"
-                    [options]="barChartOptions1"
-                    [legend]="barChartLegend"
-                    [chartType]="barChartType">
-                </canvas>
+<mat-drawer-container [hasBackdrop]="true">
+    <mat-drawer #drawer class="example-sidenav" mode="over" style="display: inline-block;">
+        <div>
+            <div style="text-align: left;">
+                <div style="text-align: right;">
+                    <button mat-icon-button aria-label="Example icon button with a home icon" (click)="drawer.toggle()">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </div>
+                <h5>{{location}}</h5>
+                <mat-form-field class="select-field">
+                    <mat-select placeholder="Districts" [(value)]="selected">
+                        <mat-option *ngFor="let district of districts" [value]="district.district" (click)="onSelect()">
+                            {{district.district}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
             </div>
         </div>
-        <div style="display: block; width: 700px; margin-top: 50px;" *ngIf="partyCount.length > 0">
-            <h5>Party list</h5>
-            <canvas baseChart
-                [data]="barChartData2"
-                [labels]="barChartLabels2"
-                [options]="pieChartOptions"
-                [chartType]="pieChartType"></canvas>
+        <div class="chart-container">
+            <div *ngIf="candidateCount.length > 0" class="chart">
+                <h5>Candidates</h5>
+                <div>
+                    <canvas baseChart [datasets]="barChartData1" [labels]="barChartLabels1" [options]="barChartOptions1"
+                        [legend]="barChartLegend" [chartType]="barChartType">
+                    </canvas>
+                </div>
+            </div>
+            <div *ngIf="partyCount.length > 0" class="chart">
+                <h5>Party list</h5>
+                <canvas baseChart [data]="barChartData2" [labels]="barChartLabels2" [options]="pieChartOptions"
+                    [chartType]="pieChartType"></canvas>
+            </div>
         </div>
     </mat-drawer>
-    <div *ngIf="lat && lng" style="padding: 0px; overflow-y: hidden;">
-        <agm-map 
-        [latitude]="lat"
-        [longitude]="lng"
-        [zoom]="zoom"
-        [disableDefaultUI]="false"
-        [zoomControl]="false"
-        [styles]="styles"
-        (mapClick)="mapClicked($event)"
-        (click)="drawer.opened ? drawer.open():drawer.toggle()">
-            <agm-marker 
-                *ngFor="let m of markers; let i = index"
-                (markerClick)="drawer.toggle()"
-                [latitude]="m.lat"
-                [longitude]="m.lng"
-                [label]="m.label"
-                [markerDraggable]="m.draggable"
+    <div *ngIf="lat && lng" class="map-container">
+        <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="false" [zoomControl]="false"
+            [styles]="styles" (mapClick)="mapClicked($event)" (click)="drawer.opened ? drawer.open():drawer.toggle()">
+            <agm-marker *ngFor="let m of markers; let i = index" (markerClick)="drawer.toggle()" [latitude]="m.lat"
+                [longitude]="m.lng" [label]="m.label" [markerDraggable]="m.draggable"
                 (dragEnd)="markerDragEnd(m, $event)">
             </agm-marker>
         </agm-map>

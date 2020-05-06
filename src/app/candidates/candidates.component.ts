@@ -8,20 +8,26 @@ import { DataService } from '../services/data.service';
 })
 export class CandidatesComponent implements OnInit, OnChanges {
   public candidates$;
-  public party$;
+  public parties$;
   public selected;
 
   constructor(private data: DataService) { }
 
   onSelect() {
     //console.log(this.selected['name']);
-    this.data.getRepByParty(this.selected['name']).subscribe(
-      data => {
-        this.candidates$ = data;
-        console.log(data);
-      },
-      err => {this.candidates$ = {}}
-    )
+    // this.data.getParties().subscribe(
+    //   data => {
+    //     this.party$ = data;
+    //   },
+    //   err => this.party$ = []
+    // );
+    // this.data.getRepByParty(this.selected['name']).subscribe(
+    //   data => {
+    //     this.candidates$ = data;
+    //     console.log(data);
+    //   },
+    //   err => { this.candidates$ = {} }
+    // );
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -30,14 +36,8 @@ export class CandidatesComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    this.data.getParties().subscribe(
-      data => {
-        this.party$ = data;
-      },
-      err => {
-        console.log(err);
-      }
-    );
+    this.data.getParties().subscribe( data => this.parties$ = data, err => this.parties$ = null);
+    this.data.getReps().subscribe(data => this.candidates$ = data, err => this.candidates$ = null);
   }
 
 }

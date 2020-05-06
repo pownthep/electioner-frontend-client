@@ -62,13 +62,14 @@
 }
 
 .example-card {
-    width: 450px;
-    height: 650px;
+    width: 250px;
+    height: auto;
     overflow: hidden;
     position: relative;
     display: inline-block;
     @media screen and (max-width: 700px) {
         margin-bottom: 25px;
+        width: 100%;
     }
     .button {
         position: absolute;
@@ -155,10 +156,30 @@
     flex: 1 1 auto;
 }
 
-.select-field{
-    width: 15vw;
+.select-field {
+    width: 100%;
+    padding: 20px;
+}
+
+mat-form-field {
     @media screen and (max-width: 700px) {
-        width: 100vw;
+        width: 300px;
+        padding: 20px;
+        margin: 0;
+    }
+}
+
+img {
+    @media screen and (max-width: 700px) {
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+.party-logo {
+    margin-top: 20px;
+    @media screen and (max-width: 700px) {
+        width: 70vw;
         padding: 20px;
     }
 }
