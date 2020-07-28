@@ -1,26 +1,4 @@
-<!--<section id="party-can" *ngIf="candidates$">
-      <div id="party">
-        <img src="../assets/svg/th-democrat.svg" alt="" width="200px">
-      </div>
-      <mat-divider></mat-divider>
-      <div id="candidates" *ngFor="let candidate of candidates$">
-          <mat-card class="card">
-            <img mat-card-image src="{{candidate.url}}" alt="Photo of a Shiba Inu">
-          </mat-card>
-      </div>
-</section>-->
 <div>
-
-
-  <!-- <div class="party-selector">
-      <mat-form-field class="select-field">
-        <mat-select placeholder="Parties" [(value)]="selected">
-          <mat-option *ngFor="let party of party$" [value]="party" (click)="onSelect()">
-            {{party.name}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-  </div> -->
   <div *ngIf="parties$ && candidates$">
     <div *ngFor="let party of parties$">
       <div style="text-align:center;">
@@ -40,7 +18,6 @@
           </div>
         </div>
       </div>
-      <mat-divider></mat-divider>
     </div>
   </div>
 </div>

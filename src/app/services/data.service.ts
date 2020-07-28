@@ -1,14 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { User } from '../models/User';
 import { Observable } from 'rxjs';
-
-interface Party {
-  _id: String,
-  name: String,
-  number: Number,
-  url: String
-}
 
 @Injectable({
   providedIn: 'root'
@@ -18,14 +10,6 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  login(user: User) {
-    return this.http.post<User>(this.baseUrl+'/users/login', user); 
-  }
-
-  vote(vote: any) {
-    return this.http.post(this.baseUrl+'/multichain/publish', vote);
-  }
-
   getReps() {
     return this.http.get(this.baseUrl+"/api/rep");
   }
@@ -34,11 +18,15 @@ export class DataService {
     return this.http.post(this.baseUrl+"/api/listreps",{party: party});
   }
 
-  getResult() {
-    return this.http.get(this.baseUrl+"/multichain/count/election3");
+  getResult(name: string): Observable<any> {
+    return this.http.get(this.baseUrl+"/multichain/count/"+name);
   }
 
   getParties():Observable<any> {
     return this.http.get(this.baseUrl+'/api/party');
+  }
+
+  getElections() {
+    return this.http.get(this.baseUrl+"/api/list/elections")
   }
 }
