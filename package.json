@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "hmr": "ng serve --o --configuration hmr --port=8000",
-    "update": "ng update @angular/cli@9 @angular/core@9"
+    "update": "ng update @angular/cli @angular/core"
   },
   "private": true,
   "dependencies": {
